@@ -6,7 +6,7 @@ A simple, beginner-friendly remote job recommendation system (Python CLI tool).
 
 ## Project Structure
 
-`
+```
 job-intelligence/
 ├── data/
 │   └── mock_jobs.py      # Mock RemoteOK API data
@@ -17,18 +17,16 @@ job-intelligence/
 ├── cli/
 │   └── main.py            # Entry point, runs the full pipeline
 └── README.md
-`
+```
 
 ## Module Overview
 
 | Layer | File | Purpose |
 |-------|------|---------|
 | Data | data/mock_jobs.py | Provides 20 mock job entries |
-| Filter | core/filter.py | ilter_remote_jobs() - keeps only remote jobs |
-| Normalizer | core/normalizer.py | 
-ormalize_jobs() - unifies field format |
-| Ranker | core/ranker.py | score_job() + 
-ank_jobs() - scores and sorts |
+| Filter | core/filter.py | filter_remote_jobs() — keeps only remote jobs |
+| Normalizer | core/normalizer.py | normalize_jobs() — unifies field format |
+| Ranker | core/ranker.py | score_job() + rank_jobs() — scores and sorts |
 | Entry | cli/main.py | Chains the pipeline and prints top 10 picks |
 
 ## Scoring Rules
@@ -44,20 +42,20 @@ ank_jobs() - scores and sorts |
 
 ### 1. Make sure you have Python 3 installed
 
-`
+```
 python --version
-`
+```
 
 ### 2. Run the program
 
-`
+```
 cd "Remote Job Intelligence MVP"
 python cli/main.py
-`
+```
 
 ## What You Can Learn
 
-If you're learning Python, this project helps you understand:
+If you are learning Python, this project helps you understand:
 
 - How functions form a processing pipeline
 - Using dictionaries to represent structured data
@@ -67,11 +65,10 @@ If you're learning Python, this project helps you understand:
 
 ## Ideas for Extension
 
-- Add tag-based filtering to ilter.py
-- Define new scoring rules in 
-anker.py
+- Add tag-based filtering to filter.py
+- Define new scoring rules in ranker.py
 - Replace mock data with a local JSON file
 - Build a simple Flask/Streamlit web UI in cli/app.py
 
 ---
-*Built with Python 3 - no external dependencies required.*
+*Built with Python 3 — no external dependencies required.*
