@@ -1,74 +1,77 @@
 # Remote Job Intelligence MVP
 
-一个简单的、适合初学者的远程职位智能推荐系统（Python 命令行工具）。
+A simple, beginner-friendly remote job recommendation system (Python CLI tool).
 
 ---
 
-## 项目结构
+## Project Structure
 
-```
+`
 job-intelligence/
 ├── data/
-│   └── mock_jobs.py      # 模拟 RemoteOK API 数据
+│   └── mock_jobs.py      # Mock RemoteOK API data
 ├── core/
-│   ├── filter.py          # 职位过滤模块
-│   ├── normalizer.py      # 数据标准化模块
-│   └── ranker.py          # 评分 & 排序模块（核心）
+│   ├── filter.py          # Job filtering module
+│   ├── normalizer.py      # Data normalization module
+│   └── ranker.py          # Scoring & ranking module (core)
 ├── cli/
-│   └── main.py            # 程序入口，运行整个流程
+│   └── main.py            # Entry point, runs the full pipeline
 └── README.md
-```
+`
 
-## 各模块作用
+## Module Overview
 
-| 模块 | 文件 | 功能 |
-|------|------|------|
-| 数据层 | `data/mock_jobs.py` | 提供 20 条模拟职位数据 |
-| 过滤 | `core/filter.py` | `filter_remote_jobs()` — 只保留远程职位 |
-| 标准化 | `core/normalizer.py` | `normalize_jobs()` — 统一字段格式 |
-| 排序 | `core/ranker.py` | `score_job()` + `rank_jobs()` — 评分并排序 |
-| 入口 | `cli/main.py` | 串联完整流程并输出前 10 个推荐 |
+| Layer | File | Purpose |
+|-------|------|---------|
+| Data | data/mock_jobs.py | Provides 20 mock job entries |
+| Filter | core/filter.py | ilter_remote_jobs() - keeps only remote jobs |
+| Normalizer | core/normalizer.py | 
+ormalize_jobs() - unifies field format |
+| Ranker | core/ranker.py | score_job() + 
+ank_jobs() - scores and sorts |
+| Entry | cli/main.py | Chains the pipeline and prints top 10 picks |
 
-## 评分规则
+## Scoring Rules
 
-| 条件 | 加分 |
-|------|------|
-| 技能包含 "python" | +3 |
-| 技能包含 "devops" | +3 |
-| 技能包含 "docker" | +2 |
-| 薪资 > 3000 | +2 |
+| Condition | Points |
+|-----------|--------|
+| Tag contains "python" | +3 |
+| Tag contains "devops" | +3 |
+| Tag contains "docker" | +2 |
+| Salary > 3000 | +2 |
 
-## 如何运行
+## How to Run
 
-### 1. 确保安装了 Python 3
+### 1. Make sure you have Python 3 installed
 
-```
+`
 python --version
-```
+`
 
-### 2. 运行程序
+### 2. Run the program
 
-```
-cd job-intelligence
+`
+cd "Remote Job Intelligence MVP"
 python cli/main.py
-```
+`
 
-## 学习要点
+## What You Can Learn
 
-如果你在学 Python，这个项目可以帮助你理解：
+If you're learning Python, this project helps you understand:
 
-- 函数如何组合成一条处理流水线
-- 用字典表示结构化数据
-- 列表过滤与排序
-- 模块化组织代码
-- 命令行程序的入口结构
+- How functions form a processing pipeline
+- Using dictionaries to represent structured data
+- List filtering and sorting
+- Modular code organization
+- CLI program entry structure
 
-## 扩展思路（学有余力可以自己尝试）
+## Ideas for Extension
 
-- 给 `filter.py` 增加按技能标签过滤的功能
-- 给 `ranker.py` 增加新的评分规则
-- 把 mock 数据改成从本地 JSON 文件读取
-- 在 `cli/` 里加一个 `app.py` 用 Flask/Streamlit 做一个简单网页
+- Add tag-based filtering to ilter.py
+- Define new scoring rules in 
+anker.py
+- Replace mock data with a local JSON file
+- Build a simple Flask/Streamlit web UI in cli/app.py
 
 ---
 *Built with Python 3 - no external dependencies required.*
